@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -28,7 +29,7 @@ public class User implements Serializable {
     private long id;
 
     @Column
-    @NotNull(message = "userName should not be null")
+    @NotBlank(message = "userName should not be null")
     private String userName;
 
     @Column
@@ -36,7 +37,7 @@ public class User implements Serializable {
     private LocalDate birthDate;
 
     @Column
-    @NotNull(message = "country should not be null")
+    @NotBlank(message = "country should not be null")
     private String country;
 
     @Column
